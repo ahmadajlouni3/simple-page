@@ -3,254 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Website</title>
-    <style>
-        /* Global Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body and HTML Setup */
-        body, html {
-            height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 20px;
-        }
-
-        /* Main Container Styling */
-        .container {
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 800px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 3em;
-            color: #333;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            color: #666;
-        }
-
-        .button {
-            background-color: #2575fc;
-            color: white;
-            padding: 15px 30px;
-            font-size: 1.1em;
-            border: none;
-            border-radius: 50px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #6a11cb;
-        }
-
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1501099826317-50a4b1c78f97') no-repeat center center fixed;
-            background-size: cover;
-            filter: blur(8px);
-            z-index: -1;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 60px 20px;
-            width: 100%;
-            text-align: center;
-        }
-
-        section h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        section p {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        /* Services Section */
-        .services {
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        .service-card {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-            flex: 1;
-            max-width: 280px;
-        }
-
-        .services-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        /* Contact Form Styling */
-        .contact {
-            background-color: #2575fc;
-            color: white;
-        }
-
-        .contact form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .contact input,
-        .contact textarea {
-            width: 100%;
-            max-width: 500px;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1em;
-            margin-top: 10px;
-        }
-
-        .contact button {
-            background-color: #ff6347;
-            color: white;
-            padding: 12px 20px;
-            font-size: 1.1em;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .contact button:hover {
-            background-color: #e43f00;
-        }
-
-        /* Footer Styling */
-        footer {
-            width: 100%;
-            padding: 30px 0;
-            background-color: #333;
-            color: white;
-            text-align: center;
-        }
-
-        footer a {
-            color: #ff6347;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive design for smaller screens */
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 2.5em;
-            }
-
-            p {
-                font-size: 1em;
-            }
-
-            .service-card {
-                max-width: 100%;
-            }
-        }
-
-    </style>
+    <title>Modern Design Template</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="background"></div>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">MyLogo</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Header Section -->
-    <div class="container">
-        <h1>Welcome to Our Modern Website</h1>
-        <p>We offer high-quality digital solutions to take your business to the next level. Explore our services and get in touch!</p>
-        <a href="#services" class="button">Explore Our Services</a>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to My Modern Website</h1>
+            <p>Your journey starts here with sleek animations and modern designs.</p>
+            <a href="#services" class="cta-button">Get Started</a>
+        </div>
+    </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section class="about" id="about">
         <h2>About Us</h2>
-        <p>We are a team of creative professionals who are passionate about helping businesses grow through modern technology, design, and innovation. Our approach is focused on delivering tailored solutions to meet each client's unique needs.</p>
+        <p>We are passionate about creating cutting-edge websites and solutions.</p>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section class="services" id="services">
         <h2>Our Services</h2>
-        <p>We offer a wide range of digital services designed to help you succeed online.</p>
-        <div class="services-container">
+        <div class="service-cards">
             <div class="service-card">
                 <h3>Web Design</h3>
-                <p>We create stunning, user-friendly websites that engage visitors and convert them into customers.</p>
+                <p>Creating beautiful, functional, and user-friendly websites.</p>
+            </div>
+            <div class="service-card">
+                <h3>Development</h3>
+                <p>Building dynamic, responsive, and robust applications.</p>
             </div>
             <div class="service-card">
                 <h3>SEO Optimization</h3>
-                <p>Improve your website's visibility and ranking on search engines to drive more organic traffic.</p>
-            </div>
-            <div class="service-card">
-                <h3>Mobile App Development</h3>
-                <p>Build innovative and functional mobile apps that deliver great user experiences on all platforms.</p>
+                <p>Improving your website's visibility on search engines.</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section class="contact" id="contact">
         <h2>Contact Us</h2>
-        <p>If you have any questions or need assistance, feel free to reach out to us using the contact form below.</p>
-        <form action="#">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <p>Reach out to us for more information and collaborations.</p>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Your Company | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p>&copy; 2025 My Modern Website. All rights reserved.</p>
     </footer>
 
+    <script src="scripts.js"></script>
 </body>
 </html>
