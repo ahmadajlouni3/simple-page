@@ -3,35 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Under Construction</title>
+    <title>Modern Animated Website</title>
     <style>
+        /* Reset styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body, html {
             height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ff4b1f, #ff9068);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
+            transition: background 1s ease;
         }
 
         .container {
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 40px;
-            border-radius: 10px;
             width: 80%;
-            max-width: 600px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            max-width: 800px;
+            border-radius: 15px;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
             transform-style: preserve-3d;
-            animation: rotateIn 3s ease-in-out infinite;
+            animation: rotateIn 5s ease-in-out infinite;
         }
 
+        /* 3D rotate animation */
         @keyframes rotateIn {
             0% {
                 transform: rotateY(0deg);
@@ -45,49 +50,64 @@
         }
 
         h1 {
-            font-size: 3em;
-            color: #ff6347;
+            font-size: 3.5em;
             margin-bottom: 20px;
-            animation: fadeIn 2s ease-out;
+            text-transform: uppercase;
+            animation: slideIn 2s ease-out;
         }
 
         p {
             font-size: 1.2em;
-            color: #333;
-            margin-bottom: 30px;
-            animation: fadeIn 3s ease-out;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeIn 2.5s ease-out forwards;
         }
 
-        .button {
-            display: inline-block;
-            background-color: #ff6347;
-            color: #fff;
-            font-size: 1.1em;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .button:hover {
-            background-color: #ff4500;
-            transform: scale(1.1);
-        }
-
-        .button:active {
-            transform: scale(1.05);
-        }
-
+        /* Fade-in text effect */
         @keyframes fadeIn {
-            0% {
+            from {
                 opacity: 0;
                 transform: translateY(20px);
             }
-            100% {
+            to {
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        /* Slide-in header effect */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .btn {
+            background-color: #ff6347;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease-in-out;
+            margin-top: 30px;
+            display: inline-block;
+        }
+
+        /* Hover and active states for button */
+        .btn:hover {
+            transform: scale(1.1);
+            background-color: #e43f00;
+        }
+
+        .btn:active {
+            transform: scale(1);
         }
 
         .background {
@@ -96,19 +116,34 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://images.unsplash.com/photo-1521747116042-5d1c21749e6a') no-repeat center center fixed;
+            background: url('https://images.unsplash.com/photo-1501099826317-50a4b1c78f97') no-repeat center center fixed;
             background-size: cover;
             filter: blur(8px);
             z-index: -1;
-            animation: parallax 10s infinite alternate ease-in-out;
+            animation: parallax 10s ease-in-out infinite alternate;
         }
 
+        /* Parallax scrolling background effect */
         @keyframes parallax {
             0% {
                 transform: translateY(0);
             }
             100% {
-                transform: translateY(-50px);
+                transform: translateY(-30px);
+            }
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .container {
+                width: 90%;
+                padding: 30px;
             }
         }
 
@@ -117,23 +152,23 @@
 <body>
 
     <div class="background"></div>
-    
+
     <div class="container">
-        <h1>Website Under Construction</h1>
-        <p>We’re working hard to bring something awesome to you. Stay tuned and check back soon!</p>
-        <a href="https://github.com" class="button" target="_blank">Visit Our GitHub</a>
+        <h1>Welcome to My Modern Website</h1>
+        <p>This is a beautifully designed, interactive, and animated web page. It showcases smooth animations, 3D effects, and a stunning background to create an engaging user experience.</p>
+        <a href="#" class="btn">Explore More</a>
     </div>
 
     <script>
-        // Optional: Add some subtle interactivity with JavaScript
-        const button = document.querySelector('.button');
-        button.addEventListener('mouseover', () => {
-            button.style.transform = 'scale(1.1)';
-        });
+        // Optional JS interactions (simple background color transition)
+        const body = document.querySelector('body');
 
-        button.addEventListener('mouseout', () => {
-            button.style.transform = 'scale(1)';
-        });
+        setInterval(() => {
+            body.style.background = body.style.background === 'linear-gradient(135deg, #6a11cb, #2575fc)' 
+                ? 'linear-gradient(135deg, #ff7e5f, #feb47b)' 
+                : 'linear-gradient(135deg, #6a11cb, #2575fc)';
+        }, 5000);
+
     </script>
 
 </body>
