@@ -3,111 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Animated Website</title>
+    <title>Modern Website</title>
     <style>
-        /* Reset styles */
+        /* Global Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Body and HTML Setup */
         body, html {
             height: 100%;
-            font-family: 'Arial', sans-serif;
-            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
             background: linear-gradient(135deg, #6a11cb, #2575fc);
-            color: #fff;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-start;
             align-items: center;
-            transition: background 1s ease;
+            padding: 20px;
         }
 
+        /* Main Container Styling */
         .container {
-            text-align: center;
-            width: 80%;
-            max-width: 800px;
-            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.85);
             padding: 40px;
-            background-color: rgba(0, 0, 0, 0.7);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            transform-style: preserve-3d;
-            animation: rotateIn 5s ease-in-out infinite;
-        }
-
-        /* 3D rotate animation */
-        @keyframes rotateIn {
-            0% {
-                transform: rotateY(0deg);
-            }
-            50% {
-                transform: rotateY(180deg);
-            }
-            100% {
-                transform: rotateY(360deg);
-            }
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
         }
 
         h1 {
-            font-size: 3.5em;
+            font-size: 3em;
+            color: #333;
             margin-bottom: 20px;
             text-transform: uppercase;
-            animation: slideIn 2s ease-out;
         }
 
         p {
             font-size: 1.2em;
-            margin-bottom: 40px;
             line-height: 1.6;
-            opacity: 0;
-            animation: fadeIn 2.5s ease-out forwards;
+            margin-bottom: 30px;
+            color: #666;
         }
 
-        /* Fade-in text effect */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Slide-in header effect */
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .btn {
-            background-color: #ff6347;
-            color: #fff;
+        .button {
+            background-color: #2575fc;
+            color: white;
             padding: 15px 30px;
-            font-size: 1.2em;
-            text-decoration: none;
+            font-size: 1.1em;
+            border: none;
             border-radius: 50px;
-            transition: all 0.3s ease-in-out;
-            margin-top: 30px;
-            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        /* Hover and active states for button */
-        .btn:hover {
-            transform: scale(1.1);
-            background-color: #e43f00;
-        }
-
-        .btn:active {
-            transform: scale(1);
+        .button:hover {
+            background-color: #6a11cb;
         }
 
         .background {
@@ -120,30 +76,123 @@
             background-size: cover;
             filter: blur(8px);
             z-index: -1;
-            animation: parallax 10s ease-in-out infinite alternate;
         }
 
-        /* Parallax scrolling background effect */
-        @keyframes parallax {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(-30px);
-            }
+        /* Section Styling */
+        section {
+            padding: 60px 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        section p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .service-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            flex: 1;
+            max-width: 280px;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Contact Form Styling */
+        .contact {
+            background-color: #2575fc;
+            color: white;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .contact button {
+            background-color: #ff6347;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .contact button:hover {
+            background-color: #e43f00;
+        }
+
+        /* Footer Styling */
+        footer {
+            width: 100%;
+            padding: 30px 0;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ff6347;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive design for smaller screens */
         @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
             h1 {
                 font-size: 2.5em;
             }
+
             p {
                 font-size: 1em;
             }
-            .container {
-                width: 90%;
-                padding: 30px;
+
+            .service-card {
+                max-width: 100%;
             }
         }
 
@@ -153,23 +202,55 @@
 
     <div class="background"></div>
 
+    <!-- Header Section -->
     <div class="container">
-        <h1>Welcome to My Modern Website</h1>
-        <p>This is a beautifully designed, interactive, and animated web page. It showcases smooth animations, 3D effects, and a stunning background to create an engaging user experience.</p>
-        <a href="#" class="btn">Explore More</a>
+        <h1>Welcome to Our Modern Website</h1>
+        <p>We offer high-quality digital solutions to take your business to the next level. Explore our services and get in touch!</p>
+        <a href="#services" class="button">Explore Our Services</a>
     </div>
 
-    <script>
-        // Optional JS interactions (simple background color transition)
-        const body = document.querySelector('body');
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a team of creative professionals who are passionate about helping businesses grow through modern technology, design, and innovation. Our approach is focused on delivering tailored solutions to meet each client's unique needs.</p>
+    </section>
 
-        setInterval(() => {
-            body.style.background = body.style.background === 'linear-gradient(135deg, #6a11cb, #2575fc)' 
-                ? 'linear-gradient(135deg, #ff7e5f, #feb47b)' 
-                : 'linear-gradient(135deg, #6a11cb, #2575fc)';
-        }, 5000);
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <p>We offer a wide range of digital services designed to help you succeed online.</p>
+        <div class="services-container">
+            <div class="service-card">
+                <h3>Web Design</h3>
+                <p>We create stunning, user-friendly websites that engage visitors and convert them into customers.</p>
+            </div>
+            <div class="service-card">
+                <h3>SEO Optimization</h3>
+                <p>Improve your website's visibility and ranking on search engines to drive more organic traffic.</p>
+            </div>
+            <div class="service-card">
+                <h3>Mobile App Development</h3>
+                <p>Build innovative and functional mobile apps that deliver great user experiences on all platforms.</p>
+            </div>
+        </div>
+    </section>
 
-    </script>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to reach out to us using the contact form below.</p>
+        <form action="#">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 Your Company | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
 
 </body>
 </html>
